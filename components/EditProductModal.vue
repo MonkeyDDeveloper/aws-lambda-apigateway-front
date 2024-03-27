@@ -12,6 +12,7 @@
     const updatingProduct = ref(false)
     const runtimeConfig = useRuntimeConfig();
     const apiUri = runtimeConfig.public.AWS_API_GATEWAY_URL
+    const productGridKey = useProductGridKey()
 
     const schema = z.object({
         name: z.string().min(1, t("EditForm.name")),
@@ -48,11 +49,13 @@
 
             if(!response.ok) throw new Error(t("Notifications.fetch.updateError"))
 
-            products.value = await getProducts(apiUri + "getProducts", t("Notifications.fetch.getError"))
+            // products.value = await getProducts(apiUri + "getProducts", t("Notifications.fetch.getError"))
 
             updatingProduct.value = false
 
             emit('closeEditingModal')
+
+            productGridKey.value = Math.random() * 1000
 
             toast.add({
                 id: "update_product_success",
@@ -81,7 +84,7 @@
             <template #header>
               <div class="flex items-center justify-between">
                 <h3 class="text-base font-semibold leading-6 text-gray-900 dark:text-white">
-                  {{ $t("ProductCard.editingProduct") }}: <span class="text-blue-munsell">{{ product.name }}</span>
+                  {{ $t("ProductCard.isEditingProduct") }}: <span class="text-blue-munsell">{{ props.product.name }}</span>
                 </h3>
                 <UButton :disabled="updatingProduct" color="gray" variant="ghost" icon="i-heroicons-x-mark-20-solid" class="-my-1" @click="$emit('closeEditingModal')" />
               </div>

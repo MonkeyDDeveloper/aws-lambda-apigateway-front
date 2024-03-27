@@ -11,6 +11,7 @@
     const toast = useToast()
     const creatingProduct = ref(false)
     const runtimeConfig = useRuntimeConfig();
+    const productGridKey = useProductGridKey()
     const apiUri = runtimeConfig.public.AWS_API_GATEWAY_URL
 
     const schema = z.object({
@@ -46,7 +47,9 @@
 
             if(!response.ok) throw new Error(t("Notifications.fetch.createError"))
 
-            products.value = await getProducts(apiUri + "getProducts", t("Notifications.fetch.getError"))
+            // products.value = await getProducts(apiUri + "getProducts", t("Notifications.fetch.getError"))
+
+            productGridKey.value = Math.random() * 1000
 
             creatingProduct.value = false
 

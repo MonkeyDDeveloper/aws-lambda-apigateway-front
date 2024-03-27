@@ -52,7 +52,7 @@ const EditForm = {
         name: "Product name must be at least 1 character long",
         price: "Product price must be greater or equal to 0",
         tags: "Please provide at least one tag for the product, if you add more please separate them by commas.",
-        tagsFormatError: "Provide one or more tags please separated by commas. Example: aqua,sand,sky",
+        tagsFormatError: "Provide one or more tags (no numbers) please separated by commas. Example: aqua,sand,sky",
         submitButton: "Update product"
     },
     Es: {
@@ -64,7 +64,7 @@ const EditForm = {
         name: "El nombre del producto debe contener al menos una letra",
         price: "El precio del producto debe ser mayor a 0",
         tags: "Por favor asigna al menos un tag para el producto, si es más de uno por favor separalos con comas.",
-        tagsFormatError: "Añada uno o más tags separados por comas. Ejemplo: limpio,casa,duradero",
+        tagsFormatError: "Añada uno o más tags (no usar números) separados por comas. Ejemplo: limpio,casa,duradero",
         submitButton: "Actualizar producto"
     }
 }
@@ -76,7 +76,7 @@ const ProductCard = {
         edit: "Edit",
         delete: "Delete",
         deleting: "Deleting",
-        editingProduct: "Editing",
+        isEditingProduct: "Editing",
         confirmDelete: "Confirm permanent delete"
     },
     Es: {
@@ -85,7 +85,7 @@ const ProductCard = {
         edit: "Editar",
         delete: "Eliminar",
         deleting: "Eliminando",
-        editingProduct: "Editando",
+        isEditingProduct: "Editando",
         confirmDelete: "Confirmar eliminación permanente"
     }
 }

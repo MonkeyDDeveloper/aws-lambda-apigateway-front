@@ -10,6 +10,7 @@
     const deletingProduct = ref(false)
     const openPopover = ref(false)
     const products = useProducts()
+    const productGridKey = useProductGridKey()
     const emit = defineEmits(['productDeleted'])
 
     const { product } = defineProps<{
@@ -17,17 +18,15 @@
     }>()
 
     const isEditingProduct = ref(false)
-    let editingProduct: Product = {
-        _id: "",
-        price: 0,
-        name: "",
-        tags: []
-    }
+    const editingProduct = ref({
+        _id: product._id,
+        price: product.price,
+        name: product.name,
+        tags: product.tags
+    })
 
     function startEditingProduct(productProperties:Product) {
 
-        editingProduct = productProperties
-        
         isEditingProduct.value = true
 
     }
@@ -45,9 +44,11 @@
 
             if(!response.ok) throw new Error(t("Notifications.fetch.deleteError"))
 
-            products.value = await getProducts(apiUri + "getProducts", t("Notifications.fetch.getError"))
+            // products.value = await getProducts(apiUri + "getProducts", t("Notifications.fetch.getError"))
 
             emit("productDeleted")
+
+            productGridKey.value = Math.random() * 1000
 
             deletingProduct.value = false
 
@@ -115,5 +116,5 @@
             </section>
         </template>
     </UCard>
-    <EditProductModal @close-editing-modal="isEditingProduct = false" :editingProduct="isEditingProduct" :product="product" />
+    <EditProductModal @close-editing-modal="isEditingProduct = false" :editingProduct="isEditingProduct" :product="editingProduct" />
 </template>

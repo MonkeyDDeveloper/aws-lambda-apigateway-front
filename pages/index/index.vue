@@ -1,3 +1,8 @@
+<script lang="ts" setup>
+
+    const keyProductGrid = useProductGridKey()
+
+</script>
 <template>
     <section class="p-5 md:p-10">
         <section class="mb-2 text-sm md:text-xl">
@@ -20,7 +25,7 @@
     <section class="p-4 md:p-10">
         <h1 id="manage-products" class="text-3xl font-bold">{{ $t("Home.products") }}</h1>
         <section class="p-2 md:p-3">
-            <ProductGrid />
+            <ProductGrid :key="keyProductGrid" />
         </section>
     </section>
 </template>
