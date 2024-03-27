@@ -46,7 +46,7 @@
 <template>
     <section class="p-2 mb-4 flex justify-between">
         <section class="w-auto">
-            <span v-if="gettingProducts">
+            <span class="text-white" v-if="gettingProducts">
                 <UIcon class="animate-spin" name="i-heroicons-arrow-path-20-solid" /> {{ $t("Notifications.loadingProducts") }}
             </span>
         </section>

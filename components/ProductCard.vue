@@ -76,7 +76,7 @@
 
 </script>
 <template>
-    <UCard>
+    <UCard class="bg-gray-900">
         <template #header>
             <section class="font-bold text-xl text-carolina-blue text-center sm:text-start">
                 {{ product.name }}
@@ -84,11 +84,11 @@
         </template>
 
         <section>
-            <p>{{ $t("ProductCard.price") }}: <span class="text-blue-munsell">${{ product.price }}</span></p>
+            <p class="text-white">{{ $t("ProductCard.price") }}: <span class="text-blue-munsell">${{ product.price }}</span></p>
         </section>
 
         <section>
-            <p>{{  $t("ProductCard.tags") }}: <span class="text-blue-munsell">{{ product.tags.join(" - ") }}</span></p>
+            <p class="text-white">{{  $t("ProductCard.tags") }}: <span class="text-blue-munsell">{{ product.tags.join(" - ") }}</span></p>
         </section>
 
         <template #footer>

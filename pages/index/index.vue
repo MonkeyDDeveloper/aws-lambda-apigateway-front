@@ -5,13 +5,13 @@
 </script>
 <template>
     <section class="p-5 md:p-10">
-        <section class="mb-2 text-sm md:text-xl">
+        <section class="mb-2 text-sm md:text-xl text-white">
             {{  $t("Home.description1") }}
         </section>
-        <section class="mb-2 text-sm md:text-xl">
+        <section class="mb-2 text-sm md:text-xl text-white">
             {{  $t("Home.description2") }}
         </section>
-        <section class="mb-2 text-sm md:text-xl">
+        <section class="mb-2 text-sm md:text-xl text-white">
             {{  $t("Home.description3") }}
         </section>
         <section class="mt-6 flex justify-end">
@@ -23,7 +23,7 @@
         </section>
     </section>
     <section class="p-4 md:p-10">
-        <h1 id="manage-products" class="text-3xl font-bold">{{ $t("Home.products") }}</h1>
+        <h1 id="manage-products" class="text-3xl font-bold text-white">{{ $t("Home.products") }}</h1>
         <section class="p-2 md:p-3">
             <ProductGrid :key="keyProductGrid" />
         </section>

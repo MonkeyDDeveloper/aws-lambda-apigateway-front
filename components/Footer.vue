@@ -1,5 +1,5 @@
 <template>
-    <section class="bg-gray-900 text-center p-10">
+    <section class="bg-gray-900 text-white text-center p-10">
         <p class="py-2 text-sm">{{ $t("Footer.p1") }}</p>
         <p class="py-2 font-extrabold text-xl text-blue-munsell">Javier Fray (MonkeyDDeveloper)</p>
         <p class="py-2 text-sm">{{ $t("Footer.p2") }}</p>
