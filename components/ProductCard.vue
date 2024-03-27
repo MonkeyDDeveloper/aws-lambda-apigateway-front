@@ -26,9 +26,9 @@
 
     function startEditingProduct(productProperties:Product) {
 
-        isEditingProduct.value = true
-
         editingProduct = productProperties
+        
+        isEditingProduct.value = true
 
     }
 
